@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clicker Evolution</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bgGlow"></div>
+
+  <main class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">⬤</div>
+        <div>
+          <h1>Clicker Evolution</h1>
+          <p class="sub">Click • Upgrade • Evolve</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="statCard">
+          <div class="label">Points</div>
+          <div id="points" class="value">0</div>
+        </div>
+        <div class="statCard">
+          <div class="label">Per Click</div>
+          <div id="ppc" class="value">1</div>
+        </div>
+        <div class="statCard">
+          <div class="label">Per Second</div>
+          <div id="pps" class="value">0</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <section class="panel evoPanel">
+        <div class="evoHeader">
+          <div>
+            <h2 id="evoName">Tiny Spark</h2>
+            <p id="evoDesc" class="muted">A small start… but not for long.</p>
+          </div>
+          <div class="levelPill">
+            Level <span id="level">1</span>
+          </div>
+        </div>
+
+        <button id="clickBtn" class="clickBtn" aria-label="Click to gain points">
+          <div class="orb" id="orb"></div>
+          <div class="clickText">
+            <div class="big">CLICK</div>
+            <div class="small">Gain points</div>
+          </div>
+        </button>
+
+        <div class="miniRow">
+          <button id="evolveBtn" class="btn primary" disabled>
+            Evolve (Needs Level <span id="nextEvoLevel">10</span>)
+          </button>
+          <button id="prestigeBtn" class="btn ghost" title="Reset for a permanent bonus" disabled>
+            Prestige ✦
+          </button>
+        </div>
+
+        <div class="hint muted">
+          Tip: Buy <b>Auto Clickers</b> to earn points while you chill 😎
+        </div>
+      </section>
+
+      <section class="panel shopPanel">
+        <div class="panelTitle">
+          <h2>Shop</h2>
+          <div class="muted">Upgrades get more expensive each time.</div>
+        </div>
+
+        <div id="shop" class="shopList"></div>
+
+        <div class="panelTitle spaced">
+          <h2>Achievements</h2>
+          <div class="muted">Small flex, big vibes.</div>
+        </div>
+        <div id="achievements" class="achList"></div>
+
+        <div class="panelFooter">
+          <button id="saveBtn" class="btn ghost">Save</button>
+          <button id="resetBtn" class="btn danger">Reset</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <canvas id="fx"></canvas>
+
+  <script src="game.js"></script>
+</body>
+</html>
